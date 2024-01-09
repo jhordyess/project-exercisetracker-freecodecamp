@@ -71,7 +71,7 @@ const createExercise = async (_id, description, duration, date, done) => {
     done(null, {
       _id,
       username: data.username,
-      date,
+      date: new Date(date).toDateString(),
       duration: Number(duration),
       description
     })
