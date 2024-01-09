@@ -107,6 +107,12 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 app.use(express.static('public'))
 
+// view complete API  call in  a middleware
+app.use((req, _, next) => {
+  console.log(`${req.method} ${req.path}`)
+  next()
+})
+
 app.get('/', (_, res) => {
   res.sendFile(__dirname + '/views/index.html')
 })
