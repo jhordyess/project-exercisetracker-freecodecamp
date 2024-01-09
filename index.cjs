@@ -72,7 +72,7 @@ const createExercise = async (_id, description, duration, date, done) => {
       _id,
       username: data.username,
       date,
-      duration: parseInt(duration),
+      duration: Number(duration),
       description
     })
   } catch (error) {
